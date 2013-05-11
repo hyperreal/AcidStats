@@ -4,14 +4,15 @@ import com.sun.jersey.api.NotFoundException;
 import info.hyperreal.acid.stats.domain.Banner;
 import info.hyperreal.acid.stats.domain.StatRow;
 import info.hyperreal.acid.stats.domain.repositories.StatRowRepository;
+import info.hyperreal.acid.stats.exceptions.BannerNotFoundException;
 
 import javax.inject.Inject;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.net.URI;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.List;
 
 @Path("/")
 public class GainerService {
@@ -19,32 +20,14 @@ public class GainerService {
     @Inject
     private StatRowRepository statRowRepository;
 
-    private static Map<Integer, StatRow> rows = new ConcurrentHashMap<Integer, StatRow>();
-
-    public String test() {
-        statRowRepository.findRowsByBanner(new Banner(1, "a"));
-        return "s";
-    }
-
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/row")
-    public Response add(StatRow row) {
-        rows.put(row.getId(), row);
-
-        URI location = URI.create(String.valueOf(row.getId()));
-        return Response.created(location).build();
-    }
-
-
     @GET
-    @Path("/row/{id}")
+    @Path("/banner/{bannerId}/stats")
     @Produces(MediaType.APPLICATION_JSON)
-    public StatRow getRow(@PathParam("id") int id) throws NotFoundException {
-        if (rows.containsKey(id)) {
-            return rows.get(id);
+    public List<StatRow> getStatsForBanner(@PathParam("bannerId") int bannerId) {
+        try {
+            return statRowRepository.findRowsByBanner(new Banner(bannerId, "a"));
+        } catch (BannerNotFoundException e) {
+            throw new NotFoundException(e.getMessage());
         }
-
-        throw new NotFoundException("Not found, kurwa");
     }
 }
