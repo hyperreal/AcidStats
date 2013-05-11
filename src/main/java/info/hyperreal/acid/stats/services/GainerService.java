@@ -1,4 +1,4 @@
-package info.hyperreal.acid.stats.service;
+package info.hyperreal.acid.stats.services;
 
 import com.sun.jersey.api.NotFoundException;
 import info.hyperreal.acid.stats.domain.Banner;
@@ -27,7 +27,7 @@ public class GainerService {
         try {
             return statRowRepository.findRowsByBanner(new Banner(bannerId, "a"));
         } catch (BannerNotFoundException e) {
-            throw new NotFoundException(e.getMessage());
+            throw new NotFoundException("Banner was not found");
         }
     }
 }
