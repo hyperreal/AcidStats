@@ -1,8 +1,11 @@
 package info.hyperreal.acid.stats.service;
 
 import com.sun.jersey.api.NotFoundException;
+import info.hyperreal.acid.stats.domain.Banner;
 import info.hyperreal.acid.stats.domain.StatRow;
+import info.hyperreal.acid.stats.domain.repositories.StatRowRepository;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -13,7 +16,15 @@ import java.util.concurrent.ConcurrentHashMap;
 @Path("/")
 public class GainerService {
 
+    @Inject
+    private StatRowRepository statRowRepository;
+
     private static Map<Integer, StatRow> rows = new ConcurrentHashMap<Integer, StatRow>();
+
+    public String test() {
+        statRowRepository.findRowsByBanner(new Banner(1, "a"));
+        return "s";
+    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
