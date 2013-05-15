@@ -30,13 +30,13 @@ public class GainerServiceTest {
     }
 
     @Test(expected = NotFoundException.class)
-    public void bannerNotFoundExceptionIsPropagated() {
+    public void bannerNotFoundExceptionIsPropagated() throws BannerNotFoundException {
         when(repository.findRowsByBanner(any(Banner.class))).thenThrow(new BannerNotFoundException());
         service.getStatsForBanner(8);
     }
 
     @Test
-    public void returnsEmptyList() {
+    public void returnsEmptyList() throws BannerNotFoundException {
         when(repository.findRowsByBanner(any(Banner.class)))
             .thenReturn(new ArrayList<StatRow>());
 
@@ -44,7 +44,7 @@ public class GainerServiceTest {
     }
 
     @Test
-    public void returnsNonEmptyList() {
+    public void returnsNonEmptyList() throws BannerNotFoundException {
         final StatRow statRow = new StatRow(1, "name");
         final ArrayList<StatRow> statRows = new ArrayList<StatRow>();
         statRows.add(statRow);

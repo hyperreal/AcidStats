@@ -9,7 +9,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Starting server on port 8080 suczko");
+        System.out.println("Starting server on port 8080");
         Server server = new Server(8080);
         ServletContextHandler sch = new ServletContextHandler(server, "/");
         sch.addEventListener(new AcidStatsServletConfig());

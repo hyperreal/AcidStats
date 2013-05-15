@@ -1,6 +1,5 @@
 package info.hyperreal.acid.stats.services;
 
-import com.sun.jersey.api.NotFoundException;
 import info.hyperreal.acid.stats.domain.Banner;
 import info.hyperreal.acid.stats.domain.StatRow;
 import info.hyperreal.acid.stats.domain.repositories.StatRowRepository;
@@ -22,12 +21,8 @@ public class GainerService {
 
     @GET
     @Path("/banner/{bannerId}/stats")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<StatRow> getStatsForBanner(@PathParam("bannerId") int bannerId) {
-        try {
-            return statRowRepository.findRowsByBanner(new Banner(bannerId, "a"));
-        } catch (BannerNotFoundException e) {
-            throw new NotFoundException("Banner was not found");
-        }
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public List<StatRow> getStatsForBanner(@PathParam("bannerId") int bannerId) throws BannerNotFoundException {
+        return statRowRepository.findRowsByBanner(new Banner(bannerId, "a"));
     }
 }
