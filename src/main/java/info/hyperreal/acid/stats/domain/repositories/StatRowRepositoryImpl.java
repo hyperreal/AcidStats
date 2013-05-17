@@ -4,12 +4,10 @@ import info.hyperreal.acid.stats.domain.Banner;
 import info.hyperreal.acid.stats.domain.StatRow;
 import info.hyperreal.acid.stats.exceptions.BannerNotFoundException;
 
-import javax.inject.Singleton;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Singleton
 public class StatRowRepositoryImpl implements StatRowRepository {
 
     private Map<Integer, List<StatRow>> rows = new ConcurrentHashMap<>();
