@@ -15,6 +15,7 @@
         <spring.version>3.2.2.RELEASE</spring.version>
         <junit-version>4.8.2</junit-version>
         <mockito-version>1.8.4</mockito-version>
+        <servlet-api.version>2.5</servlet-api.version>
         <target-jdk>1.7</target-jdk>
     </properties>
 
@@ -37,8 +38,20 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
         </dependency>
 
         <dependency>

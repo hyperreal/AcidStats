@@ -5,26 +5,17 @@
 
     <display-name>AcidStats</display-name>
 
-    <context-param>
-        <param-name>resteasy.resources</param-name>
-        <param-value>info.hyperreal.acid.stats.services</param-value>
-    </context-param>
-
-    <listener>
-        <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
-    </listener>
-
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-
     <servlet>
-        <servlet-name>resteasy-servlet</servlet-name>
-        <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+        <servlet-name>spring-mvc-servlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc-servlet.xml</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>resteasy-servlet</servlet-name>
+        <servlet-name>spring-mvc-servlet</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 

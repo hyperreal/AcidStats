@@ -20,6 +20,12 @@ public class GainerService {
     private StatRowRepository statRowRepository;
 
     @GET
+    @Path("/test")
+    public String test() {
+        return "Hello";
+    }
+
+    @GET
     @Path("/banner/{bannerId}/stats")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<StatRow> getStatsForBanner(@PathParam("bannerId") int bannerId) throws BannerNotFoundException {
