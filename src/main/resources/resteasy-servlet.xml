@@ -5,10 +5,9 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     ">
 
-    <context:component-scan base-package="info.hyperreal.acid.stats.services" />
+    <context:component-scan base-package="info.hyperreal.acid.stats" />
     <context:annotation-config />
 
-    <import resource="classpath:springmvc-resteasy.xml" />
     <import resource="acid-beans.xml" />
 
 </beans>

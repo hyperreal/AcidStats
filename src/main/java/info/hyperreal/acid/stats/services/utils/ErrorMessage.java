@@ -13,6 +13,7 @@ public class ErrorMessage {
     }
 
     public ErrorMessage(String message) {
+        this();
         this.message = message;
     }
 

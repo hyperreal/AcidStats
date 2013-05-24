@@ -1,5 +1,6 @@
 package info.hyperreal.acid.stats.domain;
 
+import info.hyperreal.acid.stats.domain.entities.Banner;
 import junit.framework.Assert;
 import org.junit.Test;
 

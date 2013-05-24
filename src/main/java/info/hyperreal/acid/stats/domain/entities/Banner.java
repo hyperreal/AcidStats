@@ -1,4 +1,4 @@
-package info.hyperreal.acid.stats.domain;
+package info.hyperreal.acid.stats.domain.entities;
 
 public class Banner {
 

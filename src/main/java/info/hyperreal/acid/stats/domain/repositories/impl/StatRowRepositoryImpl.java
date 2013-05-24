@@ -1,7 +1,8 @@
-package info.hyperreal.acid.stats.domain.repositories;
+package info.hyperreal.acid.stats.domain.repositories.impl;
 
-import info.hyperreal.acid.stats.domain.Banner;
-import info.hyperreal.acid.stats.domain.StatRow;
+import info.hyperreal.acid.stats.domain.entities.Banner;
+import info.hyperreal.acid.stats.domain.entities.StatRow;
+import info.hyperreal.acid.stats.domain.repositories.StatRowRepository;
 import info.hyperreal.acid.stats.exceptions.BannerNotFoundException;
 
 import java.util.List;

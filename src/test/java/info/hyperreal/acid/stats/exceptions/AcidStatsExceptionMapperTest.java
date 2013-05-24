@@ -2,7 +2,7 @@ package info.hyperreal.acid.stats.exceptions;
 
 import static org.junit.Assert.*;
 
-import info.hyperreal.acid.stats.domain.Banner;
+import info.hyperreal.acid.stats.domain.entities.Banner;
 import info.hyperreal.acid.stats.services.AcidStatsExceptionMapper;
 import org.junit.Test;
 

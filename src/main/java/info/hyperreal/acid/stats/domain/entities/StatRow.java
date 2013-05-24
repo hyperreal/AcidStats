@@ -1,4 +1,4 @@
-package info.hyperreal.acid.stats.domain;
+package info.hyperreal.acid.stats.domain.entities;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

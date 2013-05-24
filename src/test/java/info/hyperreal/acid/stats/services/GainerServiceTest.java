@@ -1,7 +1,7 @@
 package info.hyperreal.acid.stats.services;
 
-import info.hyperreal.acid.stats.domain.Banner;
-import info.hyperreal.acid.stats.domain.StatRow;
+import info.hyperreal.acid.stats.domain.entities.Banner;
+import info.hyperreal.acid.stats.domain.entities.StatRow;
 import info.hyperreal.acid.stats.domain.repositories.StatRowRepository;
 import info.hyperreal.acid.stats.exceptions.BannerNotFoundException;
 import junit.framework.Assert;
