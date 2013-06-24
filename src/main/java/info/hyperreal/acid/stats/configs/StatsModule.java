@@ -9,6 +9,7 @@ public class StatsModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(StatRowRepository.class).to(StatRowRepositoryImpl.class);
+
     }
 
 

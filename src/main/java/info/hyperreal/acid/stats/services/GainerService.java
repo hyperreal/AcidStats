@@ -24,7 +24,9 @@ public class GainerService {
     @GET
     @Path("/test")
     @Produces(MediaType.TEXT_PLAIN)
-    public String test() {
+    public String test() throws BannerNotFoundException {
+
+        statRowRepository.findRowsByBanner(new Banner(1, "name"));
         return "Hello";
     }
 

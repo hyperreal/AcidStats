@@ -21,40 +21,18 @@
         <resteasy-guice.version>3.0-rc-1</resteasy-guice.version>
         <target-jdk>1.7</target-jdk>
 
+        <mongo-java-driver.version>2.11.1</mongo-java-driver.version>
+        <guiceymongo.version>0.2-SNAPSHOT</guiceymongo.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>mattinsler-snapshots</id>
+            <url>http://mattinsler.github.com/repository/snapshots</url>
+        </repository>
+    </repositories>
+
     <dependencies>
-
-        <dependency>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-            <version>${findbugs-plugin.version}</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>${guice.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-guice</artifactId>
-            <version>${resteasy-guice.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet-api.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -68,7 +46,40 @@
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+            <version>${findbugs-plugin.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.mattinsler</groupId>
+            <artifactId>guiceymongo</artifactId>
+            <version>${guiceymongo.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-guice</artifactId>
+            <version>${resteasy-guice.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
@@ -97,11 +108,6 @@
 
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-spring</artifactId>
-            <version>${resteasy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxb-provider</artifactId>
             <version>${resteasy.version}</version>
         </dependency>
@@ -111,7 +117,6 @@
             <version>${resteasy.version}</version>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
 
