@@ -26,7 +26,7 @@ public class GainerServiceTest {
     private GainerService service = new GainerService();
 
 
-    @Test(expected = BannerNotFoundException.class)
+    /*@Test(expected = BannerNotFoundException.class)
     public void bannerNotFoundExceptionIsPropagated() throws BannerNotFoundException {
         when(repository.findRowsByBanner(any(Banner.class))).thenThrow(new BannerNotFoundException());
         service.getStatsForBanner(8);
@@ -48,5 +48,5 @@ public class GainerServiceTest {
         when(repository.findRowsByBanner(any(Banner.class))).thenReturn(statRows);
 
         Assert.assertEquals(statRow, service.getStatsForBanner(9).iterator().next());
-    }
+    }*/
 }

@@ -1,8 +1,7 @@
 package info.hyperreal.acid.stats.services.utils;
 
-import com.sun.xml.txw2.annotation.XmlElement;
-
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlElement;
 
 @XmlRootElement(name = "error")
 public class ErrorMessage {

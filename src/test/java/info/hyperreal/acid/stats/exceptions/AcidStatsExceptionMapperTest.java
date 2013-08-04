@@ -20,7 +20,7 @@ public class AcidStatsExceptionMapperTest {
 
     @Test
     public void acidStatsEntityToResponseWithEntity() {
-        Banner banner = new Banner(1, "name");
+        Banner banner = new Banner("1", "name");
         Response response = mapper.toResponse(new AcidStatsEntityException("message", banner));
         assertEquals(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), response.getStatus());
     }

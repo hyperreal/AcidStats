@@ -6,29 +6,29 @@
     <display-name>AcidStats</display-name>
 
     <context-param>
-        <param-name>resteasy.guice.modules</param-name>
-        <param-value>info.hyperreal.acid.stats.configs.StatsModule</param-value>
-    </context-param>
-    <context-param>
-        <param-name>resteasy.scan</param-name>
-        <param-value>true</param-value>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
 
     <listener>
         <listener-class>
-            org.jboss.resteasy.plugins.guice.GuiceResteasyBootstrapServletContextListener
+            org.springframework.web.context.ContextLoaderListener
         </listener-class>
     </listener>
 
     <servlet>
-        <servlet-name>Resteasy</servlet-name>
+        <servlet-name>Jersey</servlet-name>
         <servlet-class>
-            org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+            com.sun.jersey.spi.spring.container.servlet.SpringServlet
         </servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.property.packages</param-name>
+            <param-value>info.hyperreal.acid.stats.services</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>Resteasy</servlet-name>
+        <servlet-name>Jersey</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
