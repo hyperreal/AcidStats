@@ -14,7 +14,7 @@ public class AcidStatsExceptionMapper implements ExceptionMapper<AcidStatsEntity
     public Response toResponse(AcidStatsEntityException e) {
         if (e.getEntity() == null) {
             return Response.status(Response.Status.NOT_FOUND).
-                entity(new ErrorMessage("Not found, kurwo")).build();
+                entity(new ErrorMessage("Not found")).build();
         } else {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).
                 entity(new ErrorMessage("Internal server error")).build();
