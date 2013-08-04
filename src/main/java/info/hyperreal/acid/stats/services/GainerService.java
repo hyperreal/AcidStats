@@ -28,14 +28,16 @@ public class GainerService {
         if (rows.isEmpty()) {
             throw new BannerNotFoundException();
         }
-        
+
         return rows;
     }
 
     @GET
     @Path("/hello")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "hello";
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public StatRow hello() {
+        final StatRow statRow = new StatRow("ajdi", "Nazwa");
+        statRow.setBannerId("ID bannera");
+        return statRow;
     }
 }
